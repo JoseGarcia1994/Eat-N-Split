@@ -1,8 +1,11 @@
 import Button from './Button.jsx';
 
-const Friend = ({friend}) => {
+const Friend = ({friend, handleSelectedFriend, selectedFriend}) => {
+  
+  const isSelected = friend.id === selectedFriend?.id;
+
   return (
-    <li>
+    <li className={isSelected ? 'selected' : ''}>
       <img src={friend.image} alt={friend.name} />
       <h3>{friend.name}</h3>
 
@@ -10,7 +13,11 @@ const Friend = ({friend}) => {
       {friend.balance > 0 && <p className="green">{friend.name} owes you ${Math.abs(friend.balance)}</p>}
       {friend.balance === 0 && <p>You and {friend.name} are even</p>}
 
-      <Button>Select</Button>
+      <Button 
+      onClick={() => handleSelectedFriend(friend)}
+      >
+        {isSelected ? 'Close' : 'Selected'}
+      </Button>
     </li>
   );
 };

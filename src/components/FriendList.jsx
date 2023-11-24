@@ -1,11 +1,16 @@
 import Friend from './Friend.jsx';
 
-const FriendList = ({friends}) => {
+const FriendList = ({friends, handleSelectedFriend, selectedFriend}) => {
 
   return (
     <ul>
       {friends.map(friend => (
-        <Friend friend={friend} key={friend.id}/>
+        <Friend 
+        key={friend.id} 
+        friend={friend} 
+        handleSelectedFriend={handleSelectedFriend}
+        selectedFriend={selectedFriend}
+        />
       ))}
     </ul>
   );
