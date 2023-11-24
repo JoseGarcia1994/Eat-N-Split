@@ -1,8 +1,6 @@
-import { initialFriends } from '../data';
 import Friend from './Friend.jsx';
 
-const FriendList = () => {
-  const friends = initialFriends
+const FriendList = ({friends}) => {
 
   return (
     <ul>
