@@ -12,7 +12,13 @@ function App() {
   const [selectedFriend, setSelectedFriend] = useState(null);
 
   const handleShowAddFriend = () => {
+    /* if (selectedFriend?.id >= 0) {
+      setShowAddFriend(false)
+    } else {
+      setShowAddFriend(!showAddFriend);
+    } */
     setShowAddFriend(!showAddFriend);
+    setSelectedFriend(null)
   }
 
   const addFriend = (friend) => {

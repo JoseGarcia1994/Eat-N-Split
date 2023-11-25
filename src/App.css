@@ -28,7 +28,7 @@ body {
 .app {
   min-height: 66vh;
   display: grid;
-  grid-template-columns: 34rem 44rem;
+  grid-template-rows: 34rem 44rem; /*  */
   column-gap: 4rem;
   align-items: start;
 }
@@ -167,4 +167,10 @@ form h2 {
   text-transform: uppercase;
   letter-spacing: -0.5px;
   margin-bottom: 1.6rem;
+}
+
+@media screen and (min-width: 846px) {
+  .app {
+    grid-template-columns: 34rem 44rem;
+  }
 }
